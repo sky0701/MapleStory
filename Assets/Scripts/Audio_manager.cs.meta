@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 3a7705bc6a67fc54b8e7f247b98dca0e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - login: {fileID: 8300000, guid: d4a644b223bd4cc46b986230ab82c128, type: 3}
+  - bgm_map1: {fileID: 8300000, guid: 4efa5e699097dd742b93a0d4b7866bfa, type: 3}
+  - bgm_map2: {fileID: 8300000, guid: 6f1c9625a7550804fac8ce4808ebccd8, type: 3}
+  - DisconnectPanel: {instanceID: 0}
+  - Map1: {instanceID: 0}
+  - Map2: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
