@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - NetworkManager
     - PlayerScript
     - Portal
+    - SoundEffectManager
     - downJump
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
@@ -24,10 +25,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
     PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PhotonAnimatorViewEditor
-    - Photon.Pun.PhotonRigidbody2DViewEditor
-    - Photon.Pun.PhotonTransformViewEditor
-    - Photon.Pun.PhotonViewInspector
     - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
@@ -118,75 +115,77 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9400}
     - Class: 114
-      Script: {instanceID: 9472}
+      Script: {instanceID: 9428}
     - Class: 114
       Script: {instanceID: 9474}
     - Class: 114
-      Script: {instanceID: 9480}
+      Script: {instanceID: 9476}
     - Class: 114
-      Script: {instanceID: 9486}
+      Script: {instanceID: 9482}
     - Class: 114
-      Script: {instanceID: 9494}
+      Script: {instanceID: 9488}
     - Class: 114
       Script: {instanceID: 9496}
     - Class: 114
-      Script: {instanceID: 9530}
+      Script: {instanceID: 9498}
     - Class: 114
       Script: {instanceID: 9532}
     - Class: 114
-      Script: {instanceID: 9628}
+      Script: {instanceID: 9534}
     - Class: 114
-      Script: {instanceID: 9660}
+      Script: {instanceID: 9630}
     - Class: 114
       Script: {instanceID: 9662}
     - Class: 114
-      Script: {instanceID: 9666}
+      Script: {instanceID: 9664}
     - Class: 114
-      Script: {instanceID: 9884}
+      Script: {instanceID: 9668}
     - Class: 114
-      Script: {instanceID: 10002}
+      Script: {instanceID: 9886}
     - Class: 114
-      Script: {instanceID: 10014}
+      Script: {instanceID: 10004}
     - Class: 114
-      Script: {instanceID: 10160}
+      Script: {instanceID: 10016}
     - Class: 114
-      Script: {instanceID: 10230}
+      Script: {instanceID: 10162}
     - Class: 114
-      Script: {instanceID: 10238}
+      Script: {instanceID: 10232}
     - Class: 114
-      Script: {instanceID: 10362}
+      Script: {instanceID: 10240}
     - Class: 114
-      Script: {instanceID: 10414}
+      Script: {instanceID: 10366}
     - Class: 114
-      Script: {instanceID: 10416}
+      Script: {instanceID: 10418}
     - Class: 114
-      Script: {instanceID: 10476}
+      Script: {instanceID: 10420}
     - Class: 114
-      Script: {instanceID: 10486}
+      Script: {instanceID: 10480}
     - Class: 114
-      Script: {instanceID: 10536}
+      Script: {instanceID: 10490}
     - Class: 114
-      Script: {instanceID: 10600}
+      Script: {instanceID: 10540}
     - Class: 114
-      Script: {instanceID: 10658}
+      Script: {instanceID: 10604}
     - Class: 114
-      Script: {instanceID: 10688}
+      Script: {instanceID: 10662}
     - Class: 114
-      Script: {instanceID: 10696}
+      Script: {instanceID: 10692}
     - Class: 114
-      Script: {instanceID: 10708}
+      Script: {instanceID: 10700}
     - Class: 114
-      Script: {instanceID: 10770}
+      Script: {instanceID: 10712}
     - Class: 114
-      Script: {instanceID: 10888}
+      Script: {instanceID: 10774}
     - Class: 114
-      Script: {instanceID: 11154}
+      Script: {instanceID: 10892}
     - Class: 114
-      Script: {instanceID: 11192}
+      Script: {instanceID: 11158}
     - Class: 114
-      Script: {instanceID: 11242}
+      Script: {instanceID: 11196}
     - Class: 114
-      Script: {instanceID: 32906}
+      Script: {instanceID: 11246}
+    - Class: 114
+      Script: {instanceID: 15298}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -406,6 +405,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
     className: CullingHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 26fe8d64d18a6adb64611d959c11fe05
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: downJump
   - hash:
       serializedVersion: 2
       Hash: 66a76d307baa3e8eb65d877c961f1b43
@@ -1296,6 +1301,12 @@ ScriptsOnlyBuild:
     className: CountOfPlayersInRoomProperty
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Platform
+  - hash:
+      serializedVersion: 2
       Hash: 3dbccc5793489caad80e37a33f1d2d30
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
@@ -1608,7 +1619,7 @@ ScriptsOnlyBuild:
     className: PropertyCell
   - hash:
       serializedVersion: 2
-      Hash: 010dc8b0742116878e834c7e726865eb
+      Hash: b8950134f9751f603a4a5a77a299db00
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Portal
@@ -1704,7 +1715,7 @@ ScriptsOnlyBuild:
     className: ScoreHelper
   - hash:
       serializedVersion: 2
-      Hash: 351af4ec3ad3567622a9a21df4d435b8
+      Hash: a5cd94ed90d7a394b2a348619846523f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerScript
@@ -2073,14 +2084,8 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Platform
-  - hash:
-      serializedVersion: 2
-      Hash: 26fe8d64d18a6adb64611d959c11fe05
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: downJump
+    className: SoundEffectManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/Scene1.unity
-  playerPath: D:/unityhome/exefiles/MapleStory.exe
+  playerPath: D:/unityhome/exeshare/MapleStory.exe

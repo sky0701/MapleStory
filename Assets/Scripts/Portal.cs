@@ -13,11 +13,12 @@ public class Portal : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject Map1;
     public GameObject Map2;
     public Animator AN;
-    public Vector3 Map2Pos;
+    Vector3 Map2Pos;
     public bool Isclimb;
     
     void Start()
     {
+        Map2Pos = new Vector3(45,16,0);
     }
 
     public void OnTriggerStay2D(Collider2D col)
@@ -27,6 +28,7 @@ public class Portal : MonoBehaviourPunCallbacks, IPunObservable
         if (col.gameObject.tag == "Portal" && Input.GetKeyDown(KeyCode.UpArrow) && PV.IsMine)
         {
             Debug.Log("포탈접촉");
+            SoundEffectManager.PlaySound("portal");
             RB.transform.position = Map2Pos;
             GameObject.Find("AudioManager").GetComponent<Audio_manager>().Map2AudioManager();
 

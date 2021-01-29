@@ -318,7 +318,6 @@ MonoBehaviour:
   Map1: {fileID: 9206591105497765351, guid: fcef91d0af929c34d89494f76597ecff, type: 3}
   Map2: {fileID: 7093487382428323438, guid: 768491ffe2ce3d145b827a62b2a88ea2, type: 3}
   AN: {fileID: 980457389460652786}
-  Map2Pos: {x: -14, y: -3, z: 0}
   Isclimb: 0
 --- !u!1 &8358535467547214152
 GameObject:

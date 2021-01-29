@@ -53,7 +53,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     void Update()
     {   
         
-        if (PV.IsMine && transform.position.x >= -13f)
+        if (PV.IsMine && transform.position.y <= 10f)
         {//2d 카메라 설정
             var CMCamera = GameObject.Find("CMCamera").GetComponent<CinemachineVirtualCamera>();
             var CMRange = GameObject.Find("CMRange1").GetComponent<PolygonCollider2D>();
@@ -62,7 +62,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             CMCamera.Follow = transform;
             CMCamera.LookAt = transform;
         }
-        else if (PV.IsMine && transform.position.x<-13f)
+        else if (PV.IsMine && transform.position.y>10f)
         {
             Debug.Log("바꼈다");
             var CMCamera = GameObject.Find("CMCamera").GetComponent<CinemachineVirtualCamera>();
@@ -91,8 +91,12 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             isGroundUp = Physics2D.OverlapCircle((Vector2)transform.position + new Vector2(0, -0.5f), 0.07f, 1 << LayerMask.NameToLayer("UpGround"));
             isAttack = Physics2D.OverlapCircle((Vector2)transform.position , 5f, 1 << LayerMask.NameToLayer("Monster"));
             AN.SetBool("jump", !(isGround || isGroundUp));
-            if (Input.GetKeyDown(KeyCode.LeftAlt) && (isGround||isGroundUp)) PV.RPC("JumpRPC", RpcTarget.All);
-
+            
+            if (Input.GetKeyDown(KeyCode.LeftAlt) && (isGround || isGroundUp))
+            {
+                SoundEffectManager.PlaySound("jump");
+                PV.RPC("JumpRPC", RpcTarget.All);
+            }
             float axisupdown = Input.GetAxisRaw("Vertical");
             if (axisupdown==-1 && (isGround || isGroundUp))
             {
@@ -107,6 +111,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             if (Input.GetKeyDown(KeyCode.LeftControl) && isAttack)
             {
                 AN.SetBool("attack", true);
+                SoundEffectManager.PlaySound("skill");
                 Debug.Log("hit");
                 GameObject.FindGameObjectWithTag("Monster").GetComponent<MonsterMove>().Attacked();
                 //PV.RPC("AttackRPC", RpcTarget.All);
@@ -184,6 +189,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         HP.fillAmount -= 0.05f;
         if (HP.fillAmount <= 0)
         {
+            SoundEffectManager.PlaySound("die");
             PV.RPC("DestroyRPC", RpcTarget.AllBuffered);
             RespawnPanel.SetActive(true);
             //GameObject.Find("NetworkManager").GetComponent<NetworkManager>().Spawn();
